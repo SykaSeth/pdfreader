@@ -90,10 +90,10 @@ DATABASES = {
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'pdfreader$default',
-#         'HOST': 'pdfreader.mysql.pythonanywhere-services.com',s
-#         'USER': 'pdfreader',
-#         'PASSWORD': 'i_9Tk4p52TJ@dxV',
+#         'NAME': 'DanyM$default',
+#         'HOST': 'DanyM.mysql.pythonanywhere-services.com',
+#         'USER': 'DanyM',
+#         'PASSWORD': '5d8Ywkdghn!Y@5N',
 #         'PORT': 3306,
 #         'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
 #     }
