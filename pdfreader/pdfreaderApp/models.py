@@ -79,7 +79,7 @@ class Dishes(models.Model):
             old_path = self.photo.path
             file_ext = os.path.splitext(old_path)[1]
             new_filename = f"{uuid.uuid4()}{file_ext}"
-            new_path = os.path.join('dishes', new_filename)
+            new_path = os.path.join('dishes', os.path.basename(new_filename))
             with open(old_path, 'rb') as old_file:
                 dish_copy.photo.save(new_path, ImageFile(old_file))
 
