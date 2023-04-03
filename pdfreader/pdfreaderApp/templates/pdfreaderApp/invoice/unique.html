@@ -1,0 +1,23 @@
+{% extends 'pdfreaderApp/base.html' %}
+
+{% block contenu %}
+    <main id="invoice_main">
+        <div class="container">
+            <p><a class="link" href={% url 'invoices' %}><i class="fa-solid fa-arrow-left"></i> Retourner aux factures</a></p>
+            {% if session.user.is_admin %}
+                <h2>Détails de la facture "{{ invoice.name }}"</h2>
+                <p>La facture "<b><a class="link" href="/media/{{invoice.file}}" title="Consulter la facture dans une autre page" target="_blank">{{ invoice.name }}</a></b>" a été ajoutée le <b>{{ invoice.date|date:"d/m/Y à H\hi" }}</b>.</p>
+            {% else %}
+                <h2>Détails de la facture "{{ invoice.code }}"</h2>
+                <p>La facture "<b><a class="link" href="/media/{{invoice.file}}" title="Consulter la facture dans une autre page" target="_blank">{{ invoice.code }}</a></b>" a été ajoutée le <b>{{ invoice.date|date:"d/m/Y à H\hi" }}</b>.</p>
+            {% endif %}
+            <p>Elle est datée du <i>{{ invoice.shipping_date }}</i></p>
+            <p>Liste des produits :</p>
+            <ul id="products">
+                {% for p in products %}
+                    <li>{{ p }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </main>
+{% endblock %}

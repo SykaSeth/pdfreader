@@ -1,0 +1,7 @@
+{% block cubes %}
+    <div id="cubes">
+        {% for i in count %}
+            <div class="cube cube-{{forloop.counter}}"></div>
+        {% endfor %}
+    </div>
+{% endblock %}

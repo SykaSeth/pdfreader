@@ -1,0 +1,149 @@
+@import 'variables';
+
+a.cube{
+    &:hover{
+        background: $white_super_light;
+        border-color: $white_super_light;
+    }
+}
+.cube{
+    background: $white_light;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border-left: 1px solid $white_light;
+    border-top: 1px solid $white_light;
+    box-shadow: 10px 10px 60px -8px rgba(0,0,0,0.2);
+    transition: background 300ms ease-in-out;
+}
+
+main.hasForm{
+    div.cubes_parent{
+        width: fit-content;
+        margin: 3rem auto;
+        display: flex;
+        position: relative;
+        div.cube{
+            position: absolute;
+            padding: 0;
+            transition: all 0.2s ease;
+        }
+        *{
+            transition: all 0.2s ease-in-out;
+        }
+        form{
+            padding: .1rem 0;
+            padding: 2rem 4rem;
+            &:hover{
+                margin: .5rem;
+            }
+            h2{
+                margin-bottom: 3rem;
+            }
+            >ul{
+                >li{
+                    margin: 1rem auto;
+                    width: 400px;
+                    ul{
+                        display: flex;
+                        flex-flow: row wrap;
+                        justify-content: space-between;
+                        li{
+                            width: 47%;
+                        }
+                    }
+                    label:not(.no_style){
+                        display: block;
+                        padding: .25rem;
+                        margin-left: 2rem;
+                        transform: translateY(-40px);
+                        transition: transform 300ms ease-in-out;
+                        position: relative;
+                        z-index: -1;
+                        &.up{
+                            transform: translateY(-80px);
+                        }
+                    }
+                    input, button{
+                        &:focus + label{
+                            transform: translateY(-80px);
+                        }
+                        background: transparent;
+                        color: $first_color;
+                        backdrop-filter: blur(5px);
+                        box-shadow: 4px 4px 60px rgba(0,0,0,0.2);
+                        width: 100%;
+                        padding: 1rem 2rem;
+                        border: none;
+                        border-left: 1px solid $white;
+                        border-top: 1px solid $white;
+                        border-radius: 5rem;
+                        font-weight: 500;
+                        outline: none;
+                        &:hover {
+                            background: $white_very_light;
+                            box-shadow: 4px 4px 60px 8px rgba(0,0,0,0.2);
+                        }
+                        &::placeholder{
+                            color: $first_color;
+                            font-weight: 400;
+                            text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+                        }
+                    }
+                    button{
+                        width: fit-content;
+                        display: block;
+                        margin: 0 auto;
+                        cursor: pointer;
+                    }
+                    &.link{
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+nav.little_nav{
+    ul{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+        li{
+            margin: 0 2rem;
+            a{
+                display: inline-block;
+                padding: .5rem 1rem;
+            }
+        }
+    }
+}
+
+#for_user{
+    position: fixed;
+    bottom: 1.5rem;
+    left: 10%;
+    right: 10%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    user-select: none;
+    pointer-events: none;
+    >div{
+        display: inline-block;
+        border: 2px solid;
+        background-color: $dark_color;
+        padding: 1rem 2rem;
+        margin: .75rem 0;
+        text-align: center;
+        pointer-events: auto;
+        cursor: pointer;
+        &.success{
+            background-color: $success_bg_color;
+        }
+        &.error{
+            background-color: $error_bg_color;
+        }
+    }
+}

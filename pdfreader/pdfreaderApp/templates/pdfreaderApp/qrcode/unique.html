@@ -1,0 +1,15 @@
+{% extends 'pdfreaderApp/base.html' %}
+
+{% block contenu %}
+    <main id="qr_code_main">
+        <div class="container">
+            <p><a class="link" href={% url 'qr_codes' %}><i class="fa-solid fa-arrow-left"></i> Retourner aux QR Codes</a></p>
+            <h2>Plat "<a class="link" href="{% url 'dish' response.dish.id %}">{{ response.dish.name }}</a>"</h2>
+            <p class="italic">Ajouté le {{ response.qr_code.date }}</p>
+            <div id="qr_code">
+                <img src="/media/{{ response.qr_code.path }}" alt="QR Code - {{ response.dish.name }}" width="205" height="205">
+                <a class="download" href="/media/{{response.qr_code.path }}" download>Télécharger le QR Code</a>
+            </div>
+        </div>
+    </main>
+{% endblock %}

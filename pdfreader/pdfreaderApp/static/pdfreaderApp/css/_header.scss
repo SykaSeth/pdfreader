@@ -1,0 +1,47 @@
+header{
+    padding: .5rem;
+    nav{
+        padding: 1rem;
+        ul{
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            align-items: center;
+            li{
+                margin: 1rem;
+                min-width: 120px;
+                text-align: center;
+                @media (min-width: 720px){
+                    justify-content: center;
+                    margin: 1rem;
+                }
+                @media (min-width: 1080px){
+                    margin: 1rem 2rem;
+                }
+                a{
+                    display: block;
+                    width: 100%;
+                    padding: .5rem 1rem;
+                    transition: background-color 300ms ease;
+                    &:hover{
+                        background-color: transparent;
+                    }
+                }
+            }
+        }
+    }
+    h1{
+        text-align: center;
+        @media (min-width: 720px){
+            margin: 1rem 0;
+        }
+        a{
+            display: inline-block;
+            text-shadow: 2px 2px 3px $white_very_light;
+            padding: .5rem 1rem;
+            background-position: 50% 50%;
+            background-size: 100%;
+            font-size: 3rem;
+        }
+    }
+}

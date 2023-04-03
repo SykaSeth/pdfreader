@@ -1,0 +1,19 @@
+{% block for_user %}
+    <div id="for_user">
+        {% if message.success %}
+            {% for msg in message.success %}
+                <div class="cube success">{{ msg }}</div>
+            {% endfor %}
+        {% endif %}
+        {% if message.error %}
+            {% for msg in message.error %}
+                <div class="cube error">{{ msg }}</div>
+            {% endfor %}
+        {% endif %}
+        {% if message.info %}
+            {% for msg in message.info %}
+                <div class="cube info">{{ msg }}</div>
+            {% endfor %}
+        {% endif %}
+    </div>
+{% endblock %}

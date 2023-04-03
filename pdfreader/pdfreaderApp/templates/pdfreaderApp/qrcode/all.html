@@ -1,0 +1,21 @@
+{% extends 'pdfreaderApp/base.html' %}
+
+{% block contenu %}
+    <main id="qr_codes_main">
+        <div class="container">
+            <h2>Liste des QR Codes pour les différents plats</h2>
+            <p>Cliquez sur l'image d'un QR Code pour accéder à plus de détails.</p>
+            <ul id="qr_codes">
+                {% for r in response %}
+                    <li>
+                        <h3>Plat "<a class="link" href="{% url 'dish' r.dish.id %}">{{ r.dish.name }}</a>"</h3>
+                        <a href="{% url 'qr_code' r.qr_code.id %}" title="Accéder aux détails du QR Code">
+                            <img src="/media/{{r.qr_code.path }}" alt="QR Code - {{ r.dish.name }}" width="205" height="205">
+                        </a>
+                        <a class="download" href="/media/{{r.qr_code.path }}" download>Télécharger ce QR Code</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </main>
+{% endblock %}

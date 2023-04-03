@@ -1,0 +1,49 @@
+{% extends 'pdfreaderApp/base.html' %}
+
+{% block contenu %}
+    <main id="dishes_main">
+        <div class="container">
+            <nav class="little_nav">
+                <ul>
+                    {% if user.is_admin %}
+                        <li><a class="cube" href="{% url 'add_dish' %}">Ajouter un plat</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+            <h2>Plats</h2>
+            <ul id="dishes">
+                {% for r in response %}
+                    <li>
+                        <a href="{% url 'dish' r.dish.id %}" title="Accéder au plat" style="background-image: url('/media/{{ r.dish.photo }}')">
+                            <div class="bg">
+                                <h2>{{ r.dish.name }}</h2>
+                                <p>Produits :</p>
+                                <ul class="products">
+                                    {% for product in r.products|slice:":3" %}
+                                        <li>{{ product.name }}</li>
+                                    {% endfor %}
+                                    {% if r.products|length > 3 %}
+                                        <li>...</li>
+                                    {% endif %}
+                                </ul>
+                            </div>
+                        </a>
+                        {% if user.is_admin %}
+                            <div class="admin">
+                                <a class="action" href="{% url 'update_dish' r.dish.id %}" title="Modifier ce plat">Modifier ce plat</a>
+                                <form action={% url 'duplicate_dish' r.dish.id %} method="post">
+                                    {% csrf_token %}
+                                    <button class="no_style action" type="submit" title="Dupliquer ce plat">Dupliquer ce plat</button>
+                                </form>
+                                <form action={% url 'delete_dish' r.dish.id %} method="post">
+                                    {% csrf_token %}
+                                    <button class="no_style delete" type="submit" title="Supprimer ce plat">Supprimer ce plat</button>
+                                </form>
+                            </div>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </main>
+{% endblock %}

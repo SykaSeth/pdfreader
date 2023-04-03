@@ -1,0 +1,279 @@
+main#dishes_main ul#dishes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+main#dishes_main ul#dishes > li {
+  border: 2px solid #1f1f1f;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  max-width: 100%;
+  margin: 2rem 0;
+}
+
+@media (min-width: 720px) {
+  main#dishes_main ul#dishes > li {
+    margin: 2rem 1rem;
+    min-width: 430px;
+  }
+}
+
+main#dishes_main ul#dishes > li a {
+  display: block;
+  max-width: 100%;
+  background-position: 50%;
+  background-size: cover;
+}
+
+@media (min-width: 720px) {
+  main#dishes_main ul#dishes > li a {
+    background-size: 105%;
+    -webkit-transition: background-size 300ms ease;
+    transition: background-size 300ms ease;
+  }
+  main#dishes_main ul#dishes > li a:hover {
+    background-size: 110%;
+  }
+}
+
+main#dishes_main ul#dishes > li a div.bg {
+  padding: 1rem;
+  background-color: #ffffff8f;
+  letter-spacing: 1px;
+}
+
+@media (min-width: 720px) {
+  main#dishes_main ul#dishes > li a div.bg {
+    padding: 2rem 3rem;
+  }
+}
+
+main#dishes_main ul#dishes > li a div.bg h2 {
+  margin-top: 0;
+}
+
+main#dishes_main ul#dishes > li a div.bg ul.products {
+  list-style-type: initial;
+  padding-left: 2rem;
+}
+
+main#dishes_main ul#dishes > li a div.bg ul.products li {
+  padding: .25rem;
+}
+
+main#dishes_main ul#dishes > li div.admin {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: .5rem;
+  font-size: smaller;
+  text-align: center;
+  border-radius: 0;
+  background-color: #ffffff8f;
+  border-top: 2px solid #1f1f1f;
+}
+
+main#dishes_main ul#dishes > li div.admin .action {
+  color: #1f1f1f;
+  text-shadow: 0 0 0 #1f1f1f;
+}
+
+main#dishes_main ul#dishes > li div.admin .action:hover {
+  color: #796651;
+  text-shadow: 0 0 0 #796651;
+}
+
+@media (min-width: 720px) {
+  main#dishes_main ul#dishes > li div.admin {
+    padding: 1rem;
+    font-size: initial;
+  }
+}
+
+main#dishes_main ul#dishes > li div.admin form button {
+  padding: .25rem .5rem;
+}
+
+main#dishes_main ul#dishes > li div.admin form button.delete {
+  color: #ca2f2f;
+}
+
+main#dishes_main ul#dishes > li div.admin form button.delete:hover {
+  color: #f35d5d;
+}
+
+main#dish_main div.container ul#products li {
+  margin: 1rem 0;
+}
+
+main#dish_main div.container > div {
+  margin: 2rem 0;
+}
+
+@media (min-width: 1080px) {
+  main#dish_main div.container > div.flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  main#dish_main div.container > div.flex div#dish_photo {
+    margin-right: 4rem;
+  }
+  main#dish_main div.container > div.flex div#dish_photo img {
+    max-width: 500px;
+  }
+}
+
+main#dish_main div.container > div div#qr_code {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main#dish_main div.container > div div#qr_code a {
+  margin-top: 1rem;
+}
+
+main#add_dish_main form#add_dish_form > ul > li {
+  margin: 2rem 0;
+}
+
+main#add_dish_main form#add_dish_form > ul > li > label {
+  display: block;
+  margin: .5rem;
+}
+
+main#add_dish_main form#add_dish_form > ul > li > label span#uncheck {
+  color: #1f1f1f;
+  cursor: pointer;
+}
+
+main#add_dish_main form#add_dish_form > ul > li > label span#uncheck:hover {
+  text-decoration: underline;
+}
+
+main#add_dish_main form#add_dish_form > ul > li > input, main#add_dish_main form#add_dish_form > ul > li > textarea {
+  background-color: #fffa;
+  border: 2px solid #1f1f1f;
+  color: #1f1f1f;
+  padding: .5rem;
+  max-width: 100%;
+  width: 500px;
+  max-width: 100%;
+}
+
+main#add_dish_main form#add_dish_form > ul > li > textarea {
+  resize: none;
+}
+
+main#add_dish_main form#add_dish_form > ul > li#recap_products ul {
+  list-style-type: initial;
+  padding-left: 2rem;
+}
+
+main#add_dish_main form#add_dish_form > ul > li#recap_products ul li {
+  margin: .25rem 0;
+}
+
+main#add_dish_main form#add_dish_form > ul > li.submit button {
+  min-width: 200px;
+  padding: .5rem 1rem;
+  color: #1f1f1f;
+  background-color: #fffa;
+  border: 2px solid #1f1f1f;
+  cursor: pointer;
+  -webkit-transition: background-color 300ms ease;
+  transition: background-color 300ms ease;
+}
+
+main#add_dish_main form#add_dish_form > ul > li.submit button:hover {
+  background-color: #fff5;
+}
+
+main#add_dish_main form#add_dish_form > ul > li div#search > ul {
+  margin: 1rem 0;
+  padding: .5rem;
+}
+
+main#add_dish_main form#add_dish_form > ul > li div#search > ul > li:first-of-type button {
+  margin: 0 1rem;
+}
+
+main#add_dish_main form#add_dish_form > ul > li div#products > ul {
+  overflow-y: scroll;
+  background-color: #fffa;
+  border: 2px solid #1f1f1f;
+  padding: 0 1rem;
+  max-height: 500px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  max-width: 100%;
+}
+
+main#add_dish_main form#add_dish_form > ul > li div#products > ul::-webkit-scrollbar {
+  width: .5rem;
+  background: #fff2;
+}
+
+main#add_dish_main form#add_dish_form > ul > li div#products > ul::-webkit-scrollbar-thumb {
+  background-color: #796651;
+}
+
+main#add_dish_main form#add_dish_form > ul > li div#products > ul li {
+  margin: 1rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main#add_dish_main form#add_dish_form > ul > li div#products > ul li:not(:last-child) {
+  border-bottom: 2px solid #fffa;
+  padding-bottom: 1rem;
+}
+
+main#add_dish_main form#add_dish_form > ul > li div#products > ul li label {
+  padding: .25rem .5rem;
+  max-width: 85%;
+  cursor: pointer;
+}
+
+main#add_dish_main form#add_dish_form > ul > li div#products > ul li input {
+  cursor: pointer;
+}
+
+main#add_dish_main form#add_dish_form > ul > li div#products > ul li span.invoice_info {
+  display: block;
+  width: 100%;
+  font-size: smaller;
+  margin: 0.25rem;
+}
+/*# sourceMappingURL=dish.css.map */

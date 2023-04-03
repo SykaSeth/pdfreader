@@ -1,0 +1,115 @@
+@import 'fonts';
+@import 'variables';
+@import 'classes';
+
+*{
+    box-sizing: border-box;
+}
+img{
+    max-width: 100%;
+}
+ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+@page {
+    margin: 0;
+}
+
+body{
+    height: 100%;
+    width: 210mm;
+    background-color: $background;
+    font-family: 'Lumios', sans-serif;
+    font-size: 1.4rem;
+    >div{
+        height: 297mm;
+        padding: 11mm;
+        &#first_page{
+            display: flex;
+            flex-direction: column;
+            >div{
+                &#logo{
+                    text-align: center;
+                    padding-bottom: 2rem;
+                    img{
+                        width: 330px;
+                        height: 330px;
+                    }
+                }
+                &#title{
+                    border-top: 4px solid #1f1f1f;
+                    border-bottom: 4px solid #1f1f1f;
+                    h1{
+                        font-size: 72px;
+                        font-family: 'Roxborough', sans-serif;
+                        max-width: 70%;
+                        margin: 0;
+                        margin-bottom: 1rem;
+                        padding: 0;
+                    }
+                }
+                &#description{
+                    p{
+                        margin: 0;
+                        padding: 1rem 0;
+                    }
+                }
+                &#dish_photo{
+                    background-size: cover;
+                    background-position: center;
+                    height: auto;
+                    flex-grow: 1;
+                }
+            }
+        }
+        &#products{
+            >ul{
+                >li{
+                    // La taille des li est fixée dans la vue dish_pdf
+                    display: flex;
+                    justify-content: space-between;
+                    border: 2px solid #1f1f1f;
+                    border-bottom: none;
+                    &#header{
+                        div{
+                            height: 15mm;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                    }
+                    &:last-of-type{
+                        border-bottom: 2px solid #1f1f1f;
+                    }
+                    div{
+                        display: flex;
+                        text-align: center;
+                        padding: 0 1rem;
+                        &:first-of-type{
+                            width: 60%;
+                            align-items: center;
+                            justify-content: center;
+                            border-right: 2px solid #1f1f1f;
+                        }
+                        &:last-of-type{
+                            width: 40%;
+                            align-content: center;
+                            flex-wrap: wrap;
+                            span{
+                                display: block;
+                                width: 100%;
+                                margin: .25rem;
+                                &.invoice{
+                                    font-size: .9rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

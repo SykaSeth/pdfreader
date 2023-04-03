@@ -1,0 +1,426 @@
+@font-face {
+  font-family: 'Roxborough';
+  src: url("../fonts/RoxboroughCF-Regular.otf");
+}
+
+@font-face {
+  font-family: 'Lumios';
+  src: url("../fonts/LumiosTypewriter-New.ttf");
+}
+
+@font-face {
+  font-family: 'Roboto Mono';
+  src: url("../fonts/roboto_mono/light.ttf");
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto Mono';
+  src: url("../fonts/roboto_mono/light_italic.ttf");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto Mono';
+  src: url("../fonts/roboto_mono/regular.ttf");
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto Mono';
+  src: url("../fonts/roboto_mono/italic.ttf");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto Mono';
+  src: url("../fonts/roboto_mono/bold.ttf");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto Mono';
+  src: url("../fonts/roboto_mono/bold_italic.ttf");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+a.cube:hover {
+  background: #fff2;
+  border-color: #fff2;
+}
+
+.cube {
+  background: #fff5;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border-left: 1px solid #fff5;
+  border-top: 1px solid #fff5;
+  -webkit-box-shadow: 10px 10px 60px -8px rgba(0, 0, 0, 0.2);
+          box-shadow: 10px 10px 60px -8px rgba(0, 0, 0, 0.2);
+  -webkit-transition: background 300ms ease-in-out;
+  transition: background 300ms ease-in-out;
+}
+
+main.hasForm div.cubes_parent {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 3rem auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+main.hasForm div.cubes_parent div.cube {
+  position: absolute;
+  padding: 0;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+main.hasForm div.cubes_parent * {
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+main.hasForm div.cubes_parent form {
+  padding: .1rem 0;
+  padding: 2rem 4rem;
+}
+
+main.hasForm div.cubes_parent form:hover {
+  margin: .5rem;
+}
+
+main.hasForm div.cubes_parent form h2 {
+  margin-bottom: 3rem;
+}
+
+main.hasForm div.cubes_parent form > ul > li {
+  margin: 1rem auto;
+  width: 400px;
+}
+
+main.hasForm div.cubes_parent form > ul > li ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+main.hasForm div.cubes_parent form > ul > li ul li {
+  width: 47%;
+}
+
+main.hasForm div.cubes_parent form > ul > li label:not(.no_style) {
+  display: block;
+  padding: .25rem;
+  margin-left: 2rem;
+  -webkit-transform: translateY(-40px);
+          transform: translateY(-40px);
+  -webkit-transition: -webkit-transform 300ms ease-in-out;
+  transition: -webkit-transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
+  position: relative;
+  z-index: -1;
+}
+
+main.hasForm div.cubes_parent form > ul > li label:not(.no_style).up {
+  -webkit-transform: translateY(-80px);
+          transform: translateY(-80px);
+}
+
+main.hasForm div.cubes_parent form > ul > li input, main.hasForm div.cubes_parent form > ul > li button {
+  background: transparent;
+  color: #1f1f1f;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  -webkit-box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.2);
+          box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  padding: 1rem 2rem;
+  border: none;
+  border-left: 1px solid #fff;
+  border-top: 1px solid #fff;
+  border-radius: 5rem;
+  font-weight: 500;
+  outline: none;
+}
+
+main.hasForm div.cubes_parent form > ul > li input:focus + label, main.hasForm div.cubes_parent form > ul > li button:focus + label {
+  -webkit-transform: translateY(-80px);
+          transform: translateY(-80px);
+}
+
+main.hasForm div.cubes_parent form > ul > li input:hover, main.hasForm div.cubes_parent form > ul > li button:hover {
+  background: #ffffff38;
+  -webkit-box-shadow: 4px 4px 60px 8px rgba(0, 0, 0, 0.2);
+          box-shadow: 4px 4px 60px 8px rgba(0, 0, 0, 0.2);
+}
+
+main.hasForm div.cubes_parent form > ul > li input::-webkit-input-placeholder, main.hasForm div.cubes_parent form > ul > li button::-webkit-input-placeholder {
+  color: #1f1f1f;
+  font-weight: 400;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+main.hasForm div.cubes_parent form > ul > li input:-ms-input-placeholder, main.hasForm div.cubes_parent form > ul > li button:-ms-input-placeholder {
+  color: #1f1f1f;
+  font-weight: 400;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+main.hasForm div.cubes_parent form > ul > li input::-ms-input-placeholder, main.hasForm div.cubes_parent form > ul > li button::-ms-input-placeholder {
+  color: #1f1f1f;
+  font-weight: 400;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+main.hasForm div.cubes_parent form > ul > li input::placeholder, main.hasForm div.cubes_parent form > ul > li button::placeholder {
+  color: #1f1f1f;
+  font-weight: 400;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+main.hasForm div.cubes_parent form > ul > li button {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+main.hasForm div.cubes_parent form > ul > li.link {
+  text-align: center;
+}
+
+nav.little_nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav.little_nav ul li {
+  margin: 0 2rem;
+}
+
+nav.little_nav ul li a {
+  display: inline-block;
+  padding: .5rem 1rem;
+}
+
+#for_user {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 10%;
+  right: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
+}
+
+#for_user > div {
+  display: inline-block;
+  border: 2px solid;
+  background-color: #1f1f1f;
+  padding: 1rem 2rem;
+  margin: .75rem 0;
+  text-align: center;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+#for_user > div.success {
+  background-color: #74c27b;
+}
+
+#for_user > div.error {
+  background-color: #c27474;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+@page {
+  margin: 0;
+}
+
+body {
+  height: 100%;
+  width: 210mm;
+  background-color: #DFD7CF;
+  font-family: 'Lumios', sans-serif;
+  font-size: 1.4rem;
+}
+
+body > div {
+  height: 297mm;
+  padding: 11mm;
+}
+
+body > div#first_page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body > div#first_page > div#logo {
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+body > div#first_page > div#logo img {
+  width: 330px;
+  height: 330px;
+}
+
+body > div#first_page > div#title {
+  border-top: 4px solid #1f1f1f;
+  border-bottom: 4px solid #1f1f1f;
+}
+
+body > div#first_page > div#title h1 {
+  font-size: 72px;
+  font-family: 'Roxborough', sans-serif;
+  max-width: 70%;
+  margin: 0;
+  margin-bottom: 1rem;
+  padding: 0;
+}
+
+body > div#first_page > div#description p {
+  margin: 0;
+  padding: 1rem 0;
+}
+
+body > div#first_page > div#dish_photo {
+  background-size: cover;
+  background-position: center;
+  height: auto;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+body > div#products > ul > li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border: 2px solid #1f1f1f;
+  border-bottom: none;
+}
+
+body > div#products > ul > li#header div {
+  height: 15mm;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body > div#products > ul > li:last-of-type {
+  border-bottom: 2px solid #1f1f1f;
+}
+
+body > div#products > ul > li div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+body > div#products > ul > li div:first-of-type {
+  width: 60%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-right: 2px solid #1f1f1f;
+}
+
+body > div#products > ul > li div:last-of-type {
+  width: 40%;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+body > div#products > ul > li div:last-of-type span {
+  display: block;
+  width: 100%;
+  margin: .25rem;
+}
+
+body > div#products > ul > li div:last-of-type span.invoice {
+  font-size: .9rem;
+}
+/*# sourceMappingURL=dish_pdf.css.map */

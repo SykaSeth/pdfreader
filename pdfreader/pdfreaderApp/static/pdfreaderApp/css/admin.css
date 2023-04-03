@@ -1,0 +1,61 @@
+nav#admin_nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav#admin_nav ul li {
+  margin: 0 1rem;
+  padding: .25rem .5rem;
+  color: #fff;
+}
+
+nav#admin_nav ul li.logout {
+  color: #ca2f2f;
+}
+
+nav#admin_nav ul li:hover, nav#admin_nav ul li .active {
+  text-decoration: underline;
+}
+
+main#admin_users_main ul#users {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main#admin_users_main ul#users > li {
+  margin: 1rem;
+  padding: 1rem;
+}
+
+main#admin_users_main ul#users > li > ul > li {
+  margin: .5rem;
+}
+
+main#admin_users_main ul#users > li > ul > li span.label {
+  display: inline-block;
+  width: 100px;
+  text-align: right;
+}
+/*# sourceMappingURL=admin.css.map */

@@ -1,0 +1,45 @@
+{% extends 'pdfreaderApp/base.html' %}
+
+{% block contenu %}
+    <main id="register_main" class="hasForm">
+        <div class="container">
+            <div class="cubes_parent">
+                <form id="register_form" class="cube" action="{% url 'register' %}" method="post">
+                    {% csrf_token %}
+                    <h2>S'inscrire</h2>
+                    <ul>
+                        <li>
+                            <ul>
+                                <li>
+                                    <input class="cube" type="text" name="last_name" required>
+                                    <label for="last_name">Nom</label>
+                                </li>
+                                <li>
+                                    <input class="cube" type="text" name="first_name" required>
+                                    <label for="first_name">Prénom</label>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <input class="cube" type="text" name="username" required>
+                            <label for="username">Pseudo</label>
+                        </li>
+                        <li>
+                            <input class="cube" type="email" name="email" required>
+                            <label for="email">Email</label>
+                        </li>
+                        <li>
+                            <input class="cube" type="password" name="password" required>
+                            <label for="password">Mot de passe</label>
+                        </li>
+                        <li class="submit">
+                            <button class="cube" type="submit">Je m'inscris</button>
+                        </li>
+                        <li class="link"><a class="link" href="{% url 'login' %}">Je me connecte</a></li>
+                    </ul>
+                </form>
+                {% include 'pdfreaderApp/components/cubes.html' with count='012345'|make_list %}
+            </div>
+        </div>
+    </main>
+{% endblock %}

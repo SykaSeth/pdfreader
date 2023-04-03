@@ -1,0 +1,11 @@
+{% extends 'pdfreaderApp/base.html' %}
+
+{% block contenu %}
+    <main id="admin_main">
+        <div class="container">
+            {% include 'pdfreaderApp/components/admin_nav.html' %}
+            <h2>Administration</h2>
+            <p>Bienvenue <i>{{ user }}</i> sur votre espace administrateur !</p>
+        </div>
+    </main>
+{% endblock %}

@@ -1,0 +1,102 @@
+@import 'variables';
+
+main#invoices_main{
+    div.container{
+        ul#invoices_array{
+            padding: 1rem;
+            @media(max-width: 1080px){
+                padding: 0;
+                overflow-x: scroll;
+                &::-webkit-scrollbar{
+                    height: .5rem;
+                    background: $first_color;
+                }
+                &::-webkit-scrollbar-thumb {
+                    background-color: $first_color_light;
+                }
+            }
+            >li{
+                >ul{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    flex-flow: row;
+                    li{
+                        padding: .75rem .5rem;
+                        text-align: center;
+                        width: 15%;
+                        min-width: 125px;
+                        &:nth-of-type(2){
+                            width: 40%;
+                            min-width: 200px;
+                        }
+                        a.check{
+                            font-size: 1.5rem;
+                            padding: .25rem .5rem;
+                        }
+                        form button{
+                            font-size: 1.5rem;
+                            padding: .25rem .5rem;
+                            color: $cancel_color;
+                            &:hover{
+                                color: $cancel_color_light;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+main#invoice_main{
+    div.container{
+        ul#products{
+            list-style-type: initial;
+            margin-left: 3rem;
+            li{
+                margin: .5rem 0;
+            }
+        }
+    }
+}
+
+main#add_invoice_main{
+    label{
+        display: block;
+        margin-left: 2rem;
+        padding: .25rem;
+    }
+    button{
+        margin-top: 2rem;
+    }
+    div.cubes_parent{
+        div.cube{
+            &-1{
+                top: -30px;
+                left: -65px;
+                width: 100px;
+                height: 100px;
+                z-index: -1;
+            }
+            &-2{
+                top: -50px;
+                right: -50px;
+                width: 90px;
+                height: 90px;
+            }
+            &-3{
+                bottom: -50px;
+                left: -20px;
+                width: 80px;
+                height: 80px;
+                z-index: -1;
+            }
+            &-4{
+                bottom: -30px;
+                right: -40px;
+                width: 60px;
+                height: 60px;
+            }
+        }
+    }
+}

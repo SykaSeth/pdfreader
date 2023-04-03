@@ -1,0 +1,10 @@
+{% block admin_nav %}
+    <nav id="admin_nav">
+        <ul>
+            <li><a href={% url 'user' %}>Mon espace</a></li>
+            <li><a class="{% if request.path == '/user/admin' %}active{% endif %}" href={% url 'admin' %}>Administration</a></li>
+            <li><a class="{% if request.path == '/user/admin/users' %}active{% endif %}" href={% url 'admin_users' %}>Utilisateurs</a></li>
+            <li class="logout"><a href={% url 'logout' %}>Me déconnecter</a></li>
+        </ul>
+    </nav>
+{% endblock %}
