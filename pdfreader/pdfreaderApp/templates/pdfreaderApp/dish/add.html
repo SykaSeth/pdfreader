@@ -1,0 +1,57 @@
+{% extends 'pdfreaderApp/base.html' %}
+
+{% block contenu %}
+    <main id="add_dish_main">
+        <div class="container">
+            <p><a class="link" href={% url 'dishes' %}><i class="fa-solid fa-arrow-left"></i> Retourner aux plats</a></p>
+            <h2>Ajouter un plat</h2>
+            <form id="add_dish_form" action="{% url 'add_dish' %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <ul>
+                    <li>
+                        <label for="name"><h3>Nom du plat</h3></label>
+                        <input type="text" name="name" value="{% if values.name %}{{values.name}}{% endif %}" required>
+                    </li>
+                    <li>
+                        <label for="product"><h3>Produits (<span id="uncheck" class="user_select_off">désélectionner</span>)</h3></label>
+                        <div id="search">
+                            <ul>
+                                <li>
+                                    <input type="text" id="product_search" name="product_search">
+                                    <button id="find_products">Rechercher</button>
+                                    <button id="cancel_find_products">Annuler</button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="products">
+                            <ul>
+                                {% for r in response %}
+                                    <li class="li_product li_product_{{r.product.id}}">
+                                        <input type="checkbox" name="products[]" id="product_{{r.product.id}}" class="product_checkbox" value="{{r.product.id}}" {% if r.product.id|slugify in values.form_products %}checked{% endif %}>
+                                        <label for="product_{{r.product.id}}">{{r.product.name}} (n° {{r.product.id}})</label>
+                                        <span class="invoice_info">Facture : "<a class="link" href={% url 'invoice' r.invoice.id %} title="Accéder à la facture" target="_blank">{{r.invoice.name}}</a>" datée du <span class="italic">{{r.invoice.date}}</span></span>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <label for="photo"><h3>Photo</h3></label>
+                        <input type="file" name="photo" accept="image/*">
+                    </li>
+                    <li>
+                        <label for="description"><h3>Description</h3></label>
+                        <textarea name="description" id="description" rows="5" maxlength="1000">{% if values.description %}{{values.description}}{% endif %}</textarea>
+                    </li>
+                    <li id="recap_products">
+                        <h3>Produits sélectionnés pour le plat "<span id="dish_name">{% if values.name %}{{values.name}}{% endif %}</span>"</h3>
+                        <ul></ul>
+                    </li>
+                    <li class="submit">
+                        <button type="submit">Ajouter ce plat</button>
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </main>
+{% endblock %}

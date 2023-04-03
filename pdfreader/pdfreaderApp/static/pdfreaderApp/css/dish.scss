@@ -1,0 +1,223 @@
+@import 'variables';
+
+main#dishes_main{
+    ul#dishes{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        align-items: baseline;
+        >li{
+            border: 2px solid $first_color;
+            width: max-content;
+            max-width: 100%;
+            margin: 2rem 0;
+            @media (min-width: 720px){
+                margin: 2rem 1rem;
+                min-width: 430px;
+            }
+            a{
+                display: block;
+                max-width: 100%;
+                background-position: 50%;
+                background-size: cover;
+                @media (min-width: 720px){
+                    background-size: 105%;
+                    transition: background-size 300ms ease;
+                    &:hover{
+                        background-size: 110%;
+                    }
+                }
+                div.bg{
+                    padding: 1rem;
+                    background-color: #ffffff8f;
+                    letter-spacing: 1px;
+                    @media (min-width: 720px){
+                        padding: 2rem 3rem;
+                    }
+                    h2{
+                        margin-top: 0;
+                    }
+                    ul.products{
+                        list-style-type: initial;
+                        padding-left: 2rem;
+                        li{
+                            padding: .25rem;
+                        }
+                    }
+                }
+            }
+            div.admin{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: .5rem;
+                font-size: smaller;
+                text-align: center;
+                border-radius: 0;
+                background-color: #ffffff8f;
+                border-top: 2px solid $first_color;
+                .action{
+                    color: $first_color;
+                    text-shadow: 0 0 0 $first_color;
+                    &:hover{
+                        color: $first_color_light;
+                        text-shadow: 0 0 0 $first_color_light;
+                    }
+                }
+                @media (min-width: 720px){
+                    padding: 1rem;
+                    font-size: initial;
+                }
+                form{
+                    button{
+                        padding: .25rem .5rem;
+                        &.delete{
+                            color: $cancel_color;
+                            &:hover{
+                                color: $cancel_color_light;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+main#dish_main{
+    div.container{
+        ul#products{
+            li{
+                margin: 1rem 0;
+            }
+        }
+        >div{
+            margin: 2rem 0;
+            @media (min-width: 1080px) {
+                &.flex{
+                    display: flex;
+                    div#dish_photo{
+                        margin-right: 4rem;
+                        img{
+                            max-width: 500px;
+                        }
+                    }
+                }
+            }
+            div{
+                &#qr_code{
+                    display: flex;
+                    flex-direction: column;
+                    a{
+                        margin-top: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+main#add_dish_main{
+    form#add_dish_form{
+        >ul{
+            >li{
+                margin: 2rem 0;
+                >label{
+                    display: block;
+                    margin: .5rem;
+                    span#uncheck{
+                        color: $first_color;
+                        cursor: pointer;
+                        &:hover{
+                            text-decoration: underline;
+                        }
+                    }
+                }
+                >input, >textarea{
+                    background-color: $white_lighter;
+                    border: 2px solid $first_color;
+                    color: $first_color;
+                    padding: .5rem;
+                    max-width: 100%;
+                    width: 500px;
+                    max-width: 100%;
+                }
+                >textarea{
+                    resize: none;
+                }
+                &#recap_products{
+                    ul{
+                        list-style-type: initial;
+                        padding-left: 2rem;
+                        li{
+                            margin: .25rem 0;
+                        }
+                    }
+                }
+                &.submit{
+                    button{
+                        min-width: 200px;
+                        padding: .5rem 1rem;
+                        color: $first_color;
+                        background-color: $white_lighter;
+                        border: 2px solid $first_color;
+                        cursor: pointer;
+                        transition: background-color 300ms ease;
+                        &:hover{
+                            background-color: $white_light;
+                        }
+                    }
+                }
+                div#search>ul{
+                    margin: 1rem 0;
+                    padding: .5rem;
+                    >li:first-of-type{
+                        button{
+                            margin: 0 1rem;
+                        }
+                    }
+                }
+                div#products>ul{
+                    overflow-y: scroll;
+                    background-color: $white_lighter;
+                    border: 2px solid $first_color;
+                    padding: 0 1rem;
+                    max-height: 500px;
+                    width: max-content;
+                    max-width: 100%;
+                    &::-webkit-scrollbar{
+                        width: .5rem;
+                        background: $white_super_light;
+                    }
+                    &::-webkit-scrollbar-thumb {
+                        background-color: $first_color_light;
+                    }
+                    li{
+                        margin: 1rem 0;
+                        display: flex;
+                        flex-flow: row wrap;
+                        align-items: center;
+                        &:not(:last-child){
+                            border-bottom: 2px solid $white_lighter;
+                            padding-bottom: 1rem;
+                        }
+                        label{
+                            padding: .25rem .5rem;
+                            max-width: 85%;
+                            cursor: pointer;
+                        }
+                        input{
+                            cursor: pointer;
+                        }
+                        span.invoice_info{
+                            display: block;
+                            width: 100%;
+                            font-size: smaller;
+                            margin: 0.25rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Reader</title>
+    <link rel="shortcut icon" href="#">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'pdfreaderApp/css/normalize.css' %}">
+    {% comment %} <link rel="stylesheet" type="text/css" href="{% static 'pdfreaderApp/css/style.css' %}"> {% endcomment %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'pdfreaderApp/css/dish_pdf.css' %}">
+
+    <link href="{% static 'fontawesome-6.2.0/css/fontawesome.css' %}" rel="stylesheet">
+    <link href="{% static 'fontawesome-6.2.0/css/brands.css' %}" rel="stylesheet">
+    <link href="{% static 'fontawesome-6.2.0/css/solid.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div id="first_page">
+        <div id="logo">
+            <img src="{% static 'pdfreaderApp/img/logo_pdf.png' %}" alt="Logo" title="Logo">
+        </div>
+        <div id="title">
+            <h1>{{ dish.name }}</h1>
+        </div>
+        {% if dish.description %}
+        <div id="description">
+            <p>{{ dish.description }}</p>
+        </div>
+        {% endif %}
+        <div id="dish_photo" style="background-image: url('{{ dish.photo.url }}')" title="Image du plat"></div>
+    </div>
+    <div id="products">
+        <ul>
+            <li id="header">
+                <div>Ingrédients</div>
+                <div>Détails</div>
+            </li>
+            {% for p in products %}
+                <li style="height: {{ size_of_product_element }}mm;">
+                    <div>{{ p.name|title|slice:":50" }}{% if p.name|length > 50 %}...{% endif %}</div>
+                    <div>
+                        <span class="date">{{ p.invoice.date|date:"d M. Y" }}</span>
+                        <span class="invoice"><a class="link" href="/media/{{p.invoice.path}}" title="Consulter la facture '{{ p.invoice.code }}' dans une autre page" target="_blank">Facture</a></span>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+        {% comment %} <table>
+            <thead>
+                <tr>
+                    <th>Ingrédients</th>
+                    <th>Détails</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for p in products %}
+                    <tr>
+                        <td>{{ p.name|slice:":50" }}{% if p.name|length > 50 %}...{% endif %}</td>
+                        <td>{{ p.invoice.date|date:"d M. Y" }} <a class="link" href="/media/{{p.invoice.path}}" title="Consulter la facture '{{ p.invoice.code }}' dans une autre page" target="_blank"><i class="fa-solid fa-file-pdf"></i></a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table> {% endcomment %}
+    </div>
+</body>
+</html>

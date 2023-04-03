@@ -1,0 +1,48 @@
+{% extends 'pdfreaderApp/base.html' %}
+
+{% block contenu %}
+    <main id="dish_main">
+        <div class="container">
+            <p>
+                {% if previous_page == '' %}
+                    <a class="link" href={% url 'dishes' %}><i class="fa-solid fa-arrow-left"></i> Aller aux plats</a>
+                {% elif previous_page|slice:"-4:"  == 'dish' %}
+                    <a class="link" href="{% url 'dishes' %}"><i class="fa-solid fa-arrow-left"></i> Retourner aux plats</a>
+                {% else %}
+                    <a class="link" href="{{previous_page}}"><i class="fa-solid fa-arrow-left"></i> Page précédente</a>
+                {% endif %}
+            </p>
+            <h2><a href="{% url 'dish_pdf' dish.id %}">{{ dish.name }}</a></h2>
+            {% if dish.copy_of %}
+                <p>Créé à partir du plat "<a class="link" href="{% url 'dish' dish.copy_of.id %}" target="_blank">{{ dish.copy_of }}</a>"</p>
+            {% endif %}
+            <div id="dish_products">
+                <p>Produits:</p>
+                <ul id="products" class="default">
+                    {% for p in products %}
+                        <li>{{ p.name }} (facture: <a class="link" href="/media/{{p.invoice.path}}" title="Consulter la facture dans une autre page" target="_blank">{{ p.invoice.name }}</a>, date: {{ p.invoice.date }})</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% if dish.description %}
+                <div id="dish_description">
+                    <p>Description:</p>
+                    <p>{{ dish.description }}</p>
+                </div>
+            {% endif %}
+            <div class="flex">
+                <div id="dish_photo">
+                    <p>Photo:</p>
+                    <img src="/media/{{ dish.photo }}" alt="Image du plat" title="Image du plat">
+                </div>
+                {% if session.user.is_admin %}
+                    <div id="qr_code" class="admin">
+                        <p>QR Code:</p>
+                        <img src="/media/{{ qr_code.path }}" alt="QR Code - {{ dish.name }}" width="205" height="205">
+                        <a class="white" href="/media/{{qr_code.path }}" download>Télécharger le QR Code</a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </main>
+{% endblock %}

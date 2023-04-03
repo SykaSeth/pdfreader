@@ -1,0 +1,148 @@
+/* ------------ SHORTCUTS ------------- */
+
+.white{
+    color: white !important;
+}
+.green{
+    color: #78ad37 !important;
+}
+.red{
+    color: #ad3737 !important;
+}
+.orange{
+    color: #d88922 !important;
+}
+.blue{
+    color: #3797ad !important;
+}
+.bg-white{
+    background-color: #fff !important;
+}
+.bg-green{
+    background-color: #78ad37 !important;
+}
+.bg-red{
+    background-color: #ad3737 !important;
+}
+.bg-black{
+    background-color: #000 !important;
+}
+
+.hide{
+    display: none !important;
+}
+.show{
+    display: block !important;
+}
+
+.relative{
+    position: relative !important;
+}
+
+.block{
+    display: block !important;
+}
+.inline{
+    display: inline-block !important;
+}
+
+.opac50{
+    opacity: .5 !important;
+}
+
+.lowercase{
+    text-transform: lowercase !important;
+}
+.uppercase{
+    text-transform: uppercase !important;
+}
+.capitalize{
+    text-transform: capitalize !important;
+}
+.bold{
+    font-weight: 500 !important;
+}
+.italic{
+    font-style: italic !important;
+}
+.underline{
+    text-decoration: underline !important;
+}
+.line_through{
+    text-decoration: line-through !important;
+}
+
+.justify{
+    text-align: justify !important;
+}
+.center{
+    text-align: center !important;
+}
+.left{
+    text-align: left !important;
+}
+.right{
+    text-align: right !important;
+}
+
+.smaller{
+    font-size: smaller !important;
+}
+.larger{
+    font-size: larger !important;
+}
+
+.sautDeLigne{
+    margin: 1rem 0 !important;
+}
+.tab{
+    margin-left: 2em !important;
+}
+.marg00{
+    margin: 0 !important;
+}
+.marg01{
+    margin: 0 1rem !important;
+}
+.marg10{
+    margin: 1em 0 !important;
+}
+.marg11{
+    margin: 1em !important;
+}
+.margAuto{
+    margin: 0 auto !important;
+}
+
+.padd0{
+    padding: 0 !important;
+}
+.padd1{
+    padding: 1em !important;
+}
+
+.width50{
+    width: 50% !important;
+}
+.width100{
+    width: 100% !important;
+}
+
+.noBorder{
+    border: none;
+}
+input.noBorder, button.noBorder{
+    outline: none;
+}
+
+.pointer{
+    cursor: pointer !important;
+}
+.default_cursor{
+    cursor: default !important;
+}
+.user_select_off{
+    user-select: none;
+}
+
+/* ---------- END SHORTCUTS ----------- */

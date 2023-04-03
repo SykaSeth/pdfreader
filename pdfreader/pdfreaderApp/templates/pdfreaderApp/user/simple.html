@@ -1,0 +1,11 @@
+{% extends 'pdfreaderApp/base.html' %}
+
+{% block contenu %}
+    <main id="user_main">
+        <div class="container">
+            {% include 'pdfreaderApp/components/user_nav.html' %}
+            <h2>Mon espace</h2>
+            <p>Bienvenue <i>{{ user }}</i> dans votre espace personnel !</p>
+        </div>
+    </main>
+{% endblock %}

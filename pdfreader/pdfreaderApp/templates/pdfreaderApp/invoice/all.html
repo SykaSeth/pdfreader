@@ -1,0 +1,41 @@
+{% extends 'pdfreaderApp/base.html' %}
+
+{% block contenu %}
+    <main id="invoices_main">
+        <div class="container">
+            <nav class="little_nav">
+                <ul>
+                    <li><a class="cube" href="{% url 'add_invoice' %}">Ajouter une facture</a></li>
+                </ul>
+            </nav>
+            <h2>Factures</h2>
+            <ul id="invoices_array" class="cube">
+                <li>
+                    <ul>
+                        <li>Numéro</li>
+                        <li>Nom</li>
+                        <li>Date d'ajout</li>
+                        <li>Visualiser</li>
+                        <li>Supprimer</li>
+                    </ul>
+                </li>
+            {% for item in invoices %}
+                <li>
+                    <ul>
+                        <li>{{item.id}}</li>
+                        <li><a class="link" href={% url 'invoice' item.code %} title="Accéder à la facture">{{item.name}}</a></li>
+                        <li>{{item.date|date:"d/m/Y"}}</li>
+                        <li><a class="link check" href="/media/{{item.file}}" title="Consulter la facture dans une autre page" target="_blank"><i class="fa-solid fa-eye"></i></a></li>
+                        <li>
+                            <form action={% url 'delete_invoice' item.id %} method="post">
+                                {% csrf_token %}
+                                <button class="no_style" type="submit" title="Supprimer la facture"><i class="fa-solid fa-trash"></i></button>
+                            </form>
+                        </li>
+                    </ul>
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+    </main>
+{% endblock %}

@@ -1,0 +1,35 @@
+@import 'variables';
+
+main#qr_codes_main{
+    ul#qr_codes{
+        display: flex;
+        flex-flow: row wrap;
+        @media (min-width: 720px){
+            justify-content: space-between;
+        }
+        >li{
+            display: flex;
+            flex-direction: column;
+            margin: 2rem 0;
+            text-align: center;
+            width: 100%;
+            @media (min-width: 720px){
+                width: 45%;
+            }
+            a{
+                margin-top: 1rem;
+            }
+        }
+    }
+}
+
+main#qr_code_main{
+    div#qr_code{
+        display: flex;
+        flex-direction: column;
+        margin: 2rem;
+        a{
+            margin-top: 1rem;
+        }
+    }
+}

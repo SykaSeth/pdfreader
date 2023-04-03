@@ -1,0 +1,29 @@
+{% extends 'pdfreaderApp/base.html' %}
+
+{% block contenu %}
+    <main id="login_main" class="hasForm">
+        <div class="container">
+            <div class="cubes_parent">
+                <form id="login_form" class="cube" action="{% url 'login' %}" method="post">
+                    {% csrf_token %}
+                    <h2>Se connecter</h2>
+                    <ul>
+                        <li>
+                            <input type="text" name="username" required>
+                            <label for="username">Identifiant</label>
+                        </li>
+                        <li>
+                            <input type="password" name="password" required>
+                            <label for="password">Mot de passe</label>
+                        </li>
+                        <li class="submit">
+                            <button type="submit">Je me connecte</button>
+                        </li>
+                        <li class="link"><a class="link" href="{% url 'register' %}">Je crée mon compte</a></li>
+                    </ul>
+                </form>
+                {% include 'pdfreaderApp/components/cubes.html' with count='01234'|make_list %}
+            </div>
+        </div>
+    </main>
+{% endblock %}

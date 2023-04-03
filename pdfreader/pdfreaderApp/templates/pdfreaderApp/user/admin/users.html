@@ -1,0 +1,25 @@
+{% extends 'pdfreaderApp/base.html' %}
+
+{% block contenu %}
+    <main id="admin_users_main">
+        <div class="container">
+            {% include 'pdfreaderApp/components/admin_nav.html' %}
+            <h2>Utilisateurs</h2>
+            <ul id="users">
+                {% for user in users %}
+                    <li class="cube">
+                        <ul>
+                            <li><span class="label">ID:</span> {{ user.id }}</li>
+                            <li><span class="label">Pseudo:</span> {{ user.username }}</li>
+                            <li><span class="label">Nom:</span> {{ user.last_name }}</li>
+                            <li><span class="label">Prénom:</span> {{ user.first_name }}</li>
+                            <li><span class="label">Email:</span> {{ user.email }}</li>
+                            <li><span class="label">Dernière connexion:</span> {{ user.last_login }}</li>
+                            <li><span class="label">Date:</span> {{ user.date_joined }}</li>
+                        </ul>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </main>
+{% endblock %}

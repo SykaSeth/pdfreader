@@ -1,0 +1,24 @@
+{% extends 'pdfreaderApp/base.html' %}
+
+{% block contenu %}
+    <main id="add_invoice_main" class="hasForm">
+        <div class="container">
+            <div class="cubes_parent">
+                <form id="add_invoice_form" class="cube" action="{% url 'add_invoice' %}" method="post" enctype="multipart/form-data">
+                    <h2>Ajouter une facture</h2>
+                    {% csrf_token %}
+                    <ul>
+                        <li>
+                            <label class="no_style" for="file">Facture</label>
+                            <input class="cube" type="file" name="file" accept="application/pdf" required>
+                        </li>
+                        <li class="submit">
+                            <button class="cube" type="submit">Ajouter</button>
+                        </li>
+                    </ul>
+                </form>
+                {% include 'pdfreaderApp/components/cubes.html' with count='0123'|make_list %}
+            </div>
+        </div>
+    </main>
+{% endblock %}

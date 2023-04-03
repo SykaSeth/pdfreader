@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Reader</title>
+    <link rel="shortcut icon" href="#">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'pdfreaderApp/css/normalize.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'pdfreaderApp/css/style.css' %}">
+    {% if request.get_full_path == "/" %}
+        <link rel="stylesheet" type="text/css" href="{% static 'pdfreaderApp/css/home.css' %}">
+    {% elif 'invoice' in request.get_full_path %}
+        <link rel="stylesheet" type="text/css" href="{% static 'pdfreaderApp/css/invoice.css' %}">
+    {% elif 'dish' in request.get_full_path %}
+        <link rel="stylesheet" type="text/css" href="{% static 'pdfreaderApp/css/dish.css' %}">
+    {% elif 'qrcode' in request.get_full_path %}
+        <link rel="stylesheet" type="text/css" href="{% static 'pdfreaderApp/css/qrcode.css' %}">
+    {% elif 'user' in request.get_full_path %}
+        {% if 'admin' in request.get_full_path %}
+            <link rel="stylesheet" type="text/css" href="{% static 'pdfreaderApp/css/admin.css' %}">
+        {% else %}
+            <link rel="stylesheet" type="text/css" href="{% static 'pdfreaderApp/css/user.css' %}">
+        {% endif %}
+    {% endif %}
+
+    <link href="{% static 'fontawesome-6.2.0/css/fontawesome.css' %}" rel="stylesheet">
+    <link href="{% static 'fontawesome-6.2.0/css/brands.css' %}" rel="stylesheet">
+    <link href="{% static 'fontawesome-6.2.0/css/solid.css' %}" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a class="cube" href="{% url 'home' %}">Accueil</a></li>
+                {% if session.user.is_admin %}
+                    <li><a class="cube" href="{% url 'invoices' %}">Factures</a></li>
+                {% endif %}
+                <li><a class="cube" href="{% url 'dishes' %}">Plats</a></li>
+                <li><a class="cube" href="{% url 'qr_codes' %}">QR Codes</a></li>
+                <li><a class="cube" href="{% url 'user' %}">Mon espace</a></li>
+            </ul>
+            {% comment %} {% if request.path == '/' %} {% endcomment %}
+            <h1><a href="/">PDF Reader</a></h1>
+            {% comment %} {% endif %} {% endcomment %}
+        </nav>
+    </header>
+
+    {% block contenu %}{% endblock %}
+
+    {% include 'pdfreaderApp/components/for_user.html' %}
+
+    <!-- Librairie jQuery -->
+    <script src="{% static 'pdfreaderApp/js/jQuery.js' %}"></script>
+    <script type="text/javascript" src="{% static 'pdfreaderApp/js/utilities.js' %}"></script>
+    {% if 'dish' in request.get_full_path %}
+        <script type="text/javascript" src="{% static 'pdfreaderApp/js/classes/Dish.class.js' %}"></script>
+    {% elif 'user' in request.get_full_path %}
+        <script type="text/javascript" src="{% static 'pdfreaderApp/js/classes/User.class.js' %}"></script>
+    {% endif %}
+    <script type="text/javascript" src="{% static 'pdfreaderApp/js/script.js' %}"></script>
+    <script type="text/javascript" src="{% static 'pdfreaderApp/js/main.js' %}"></script>
+</body>
+</html>

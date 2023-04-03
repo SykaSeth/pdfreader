@@ -1,0 +1,56 @@
+main#qr_codes_main ul#qr_codes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+
+@media (min-width: 720px) {
+  main#qr_codes_main ul#qr_codes {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+main#qr_codes_main ul#qr_codes > li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 2rem 0;
+  text-align: center;
+  width: 100%;
+}
+
+@media (min-width: 720px) {
+  main#qr_codes_main ul#qr_codes > li {
+    width: 45%;
+  }
+}
+
+main#qr_codes_main ul#qr_codes > li a {
+  margin-top: 1rem;
+}
+
+main#qr_code_main div#qr_code {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 2rem;
+}
+
+main#qr_code_main div#qr_code a {
+  margin-top: 1rem;
+}
+/*# sourceMappingURL=qrcode.css.map */
