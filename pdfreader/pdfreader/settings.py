@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-sohjzif3r-&7k+einndv4cvvt-fyn!tru(d4f)4+wibaoi8pzn
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['danym.pythonanywhere.com']
 
 
 # Application definition
@@ -90,7 +90,7 @@ DATABASES = {
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'DanyM$default',
+#         'NAME': 'DanyM$pdfreader',
 #         'HOST': 'DanyM.mysql.pythonanywhere-services.com',
 #         'USER': 'DanyM',
 #         'PASSWORD': '5d8Ywkdghn!Y@5N',
